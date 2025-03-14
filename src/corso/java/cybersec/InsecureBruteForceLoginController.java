@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class InsecureBruteForceLoginController {
 	private Connection conn = null;
@@ -54,7 +55,7 @@ public class InsecureBruteForceLoginController {
 		}
 	}
 
-	private void closeResources(Connection conn, PreparedStatement pstmt, ResultSet rs) {
+	private void closeResources(Connection conn, Statement pstmt, ResultSet rs) {
 		try {
 			rs.close();
 		} catch (SQLException e) {
